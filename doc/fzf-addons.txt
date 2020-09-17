@@ -1,0 +1,23 @@
+FZF-Addons - TABLE OF CONTENTS                  *fzf-addons* *fzf-addons-toc*
+==============================================================================
+
+  Introduction
+  Commands
+
+This plugin is only available if fzf is installed.
+
+INTRODUCTION                                    *fzf-addons*
+==============================================================================
+
+A set of commands is defined that serve as a gateway to fzf.
+
+COMMANDS                                        *fzf-addons-commands*
+==============================================================================
+
+Here are the commands made available through this repository.
+
+                                                *:Brofiles* *fzf-addons-brofiles:Brofiles*
+:Brofiles {args}        Open an fzf buffer with previously opened buffers.
+
+
+ vim:tw=78:et:ft=help:norl:
