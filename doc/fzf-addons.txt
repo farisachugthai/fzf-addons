@@ -1,23 +1,55 @@
-FZF-Addons - TABLE OF CONTENTS                  *fzf-addons* *fzf-addons-toc*
+*fzf-addons.txt*          For Vim version 7.4    Last change: 2020 September 2
+
+TABLE OF CONTENTS                                            *fzf-addons-toc*
 ==============================================================================
 
-  Introduction
-  Commands
+1. Introduction                                 |fzf-addons-introduction|
+2. Commands                                     |fzf-addons-commands|
+  2.1. Brofiles                                 |:Brofiles|
+3. Options                                      |fzf-addons-options|
+4. Helping Out                                  |fzf-addons-helping|
+
+Additional commands for FZF.
 
 This plugin is only available if fzf is installed.
 
-INTRODUCTION                                    *fzf-addons*
+1. Introduction                                     *fzf-addons-introduction*
 ==============================================================================
 
 A set of commands is defined that serve as a gateway to fzf.
 
-COMMANDS                                        *fzf-addons-commands*
+2. Commands                                             *fzf-addons-commands*
 ==============================================================================
 
 Here are the commands made available through this repository.
 
-                                                *:Brofiles* *fzf-addons-brofiles:Brofiles*
-:Brofiles {args}        Open an fzf buffer with previously opened buffers.
+                                       *:Brofiles* *fzf-addons-brofiles:Brofiles*
+`:Brofiles {args}`            Open an fzf buffer with previously opened buffers.
 
+
+3. Options                                               *fzf-addons-options*
+==============================================================================
+
+Here are the options made available through this repository.
+
+                                                        *g:fzf_options*
+g:fzf_options               Standard options that can provided to a plethora
+                            of commands.
+                            See the |fzf| documentation for more.
+
+4. Helping Out                                            *fzf-addons-helping*
+=============================================================================
+
+fzf-addons needs the help of the Vim community to keep improving. Please
+consider joining this effort by providing new features or bug reports.
+
+* Clone the repository on GitHub
+  (git clone git@github.com:farisachugthai/fzf-addons.git),
+  make your changes and send a pull request on GitHub.
+* Make a patch, report a bug/feature request (see below) and attach the patch
+  to it.
+
+You can contribute by fixing or reporting bugs in our issue tracker:
+https://github.com/farisachugthai/fzf-addons/issues
 
  vim:tw=78:et:ft=help:norl:

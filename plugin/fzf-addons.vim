@@ -8,6 +8,16 @@
 " Options:
 let s:fzf_options = get(g:, 'fzf_options', [])
 
+if !exists(':FZF')
+  finish
+endif
+
+if exists('g:did_fzf_addons') || &compatible || v:version < 700
+  finish
+endif
+let g:did_fzf_addons = 1
+
+
 " Brofiles:
   function! s:CompleteBrofiles(A, L, P)
     return v:oldfiles
@@ -19,8 +29,10 @@ let s:fzf_options = get(g:, 'fzf_options', [])
         \ 'sink': 'sp',
         \ 'options': s:fzf_options}, <bang>0))
 
+  " TODO: `-nargs` not being passed to the fzf buffer upon initialization. Same with Brofiles
   command! -bar -bang -nargs=* -complete=help Help call fzf#vim#helptags(<bang>0)
-  command! -bang -bar FZScriptnames call vimscript#fzf_scriptnames(<bang>0)
+
+  command! -bang -bar FZScriptnames call fzf_addons#fzf_scriptnames(<bang>0)
 
   " fzf_for_todos
   command! -bang -bar -complete=var -nargs=* TodoFuzzy call fzf_addons#RipgrepFzf('todo ' . <q-args>, <bang>0)
@@ -89,7 +101,7 @@ let s:fzf_options = get(g:, 'fzf_options', [])
           \ 'down':    len(fzf_addons#buflist()) + 2
           \ }, <bang>0))
 
-" FZMru:
+" Mru:
   " I feel like this could work with complete=history right?
   command! -bang -bar -nargs=* -complete=customlist,s:CompleteBrofiles Mru call fzf_addons#FZFMru(<bang>0)
 
@@ -121,11 +133,10 @@ let s:fzf_options = get(g:, 'fzf_options', [])
 
   " Or, if you want to override the command with different fzf options, just pass
   " a custom spec to the function.
+  " *Hey we actually handle args!
   command! -bar -bang -nargs=* -complete=file RFiles
       \ call fzf#vim#files(<q-args>,
-      \ {'options': [
-          \ '--layout=reverse', '--info=inline'
-      \ ]},
+      \ {'options': s:fzf_options},
       \ <bang>0)
 
   " Want a preview window?
@@ -269,7 +280,8 @@ if !exists('*FZFBinding')
   endfunction
 endif
 
-if !exists('no_plugin_maps') && !exists('no_fzf_vim_maps')
+" Requires nvim currently because of our use of the <Cmd> mapping
+if !exists('no_plugin_maps') && !exists('no_fzf_vim_maps') && has('nvim')
   call FZFBinding()
   " toggle on to stop loading maps
   " let g:no_fzf_vim_maps = 1

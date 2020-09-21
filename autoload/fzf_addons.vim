@@ -56,7 +56,7 @@ function! fzf_addons#RipgrepFzf(query, fullscreen)  abort
   call fzf#vim#grep(l:initial_command, 1, fzf#vim#with_preview(l:spec), a:fullscreen)
 endfunction
 
-function! fzd_addons#plug_help_sink(line)  abort
+function! fzf_addons#plug_help_sink(line)  abort
   " Call :PlugHelp to use fzf to open a window with all of the plugins
   " you have installed listed and upon pressing enter open the help
   " docs. That's not a great explanation but honestly easier to explain
@@ -83,5 +83,13 @@ endfunction
 function! fzf_addons#bufopen(e) abort
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
   return v:true
+endfunction
+
+function! fzf_addons#fzf_scriptnames(bang) abort
+  return fzf#run(fzf#wrap('scriptnames',
+        \ {'source': ':scriptnames',
+        \ 'sink': 'e',
+        \ 'options': ['--header', 'Scriptnames']},
+        \ a:bang))
 endfunction
 

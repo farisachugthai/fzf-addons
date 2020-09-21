@@ -1,0 +1,10 @@
+:Brofiles	fzf-addons.txt	/*:Brofiles*
+fzf-addons-brofiles:Brofiles	fzf-addons.txt	/*fzf-addons-brofiles:Brofiles*
+fzf-addons-commands	fzf-addons.txt	/*fzf-addons-commands*
+fzf-addons-helping	fzf-addons.txt	/*fzf-addons-helping*
+fzf-addons-introduction	fzf-addons.txt	/*fzf-addons-introduction*
+fzf-addons-options	fzf-addons.txt	/*fzf-addons-options*
+fzf-addons-toc	fzf-addons.txt	/*fzf-addons-toc*
+fzf-addons.txt	fzf-addons.txt	/*fzf-addons.txt*
+g:fzf_options	fzf-addons.txt	/*g:fzf_options*
+help-tags	tags	1
