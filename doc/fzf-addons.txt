@@ -1,4 +1,4 @@
-*fzf-addons.txt*          For Vim version 7.4    Last change: 2020 September 2
+*fzf-addons.txt*          For Vim version 7.4    Last change: 2020 December 22
 
 TABLE OF CONTENTS                                            *fzf-addons-toc*
 ==============================================================================
@@ -6,6 +6,9 @@ TABLE OF CONTENTS                                            *fzf-addons-toc*
 1. Introduction                                 |fzf-addons-introduction|
 2. Commands                                     |fzf-addons-commands|
   2.1. Brofiles                                 |:Brofiles|
+  2.2. GFiles                                   |:GFiles|
+  2.3. GitFiles                                 |:GitFiles|
+  2.4. ShowPlugins                              |:ShowPlugins|
 3. Options                                      |fzf-addons-options|
 4. Helping Out                                  |fzf-addons-helping|
 
@@ -23,10 +26,28 @@ A set of commands is defined that serve as a gateway to fzf.
 
 Here are the commands made available through this repository.
 
-                                       *:Brofiles* *fzf-addons-brofiles:Brofiles*
+                                            *:Brofiles* *fzf-addons-:Brofiles*
 `:Brofiles {args}`            Open an fzf buffer with previously opened buffers.
+                            Refer to  |v:oldfiles| for any relevant questions.
+                            In addition, the help in |:oldfiles| and
+                            `:browse oldfiles` may be of use.
+                            *There's no tag for browse oldfiles?*
 
-                                 *:ShowPlugins* *fzf-addons-brofiles:Brofiles*
+                                                *:GFiles* *fzf-addons-:GFiles*
+`:GFiles {args}`              Open an fzf buffer with any of the recognized
+                            files in your current git repository.
+                            **Note:** Requires vim-fugitive from Tim Pope to
+                            be available. Command completion is generated
+                            using that plugin.
+
+                                            *:GitFiles* *fzf-addons-:GitFiles*
+`:GitFiles {args}`            Open an fzf buffer with any of the recognized
+                            files in your current git repository.
+                            **Note:** Requires vim-fugitive from Tim Pope to
+                            be available. Command completion is generated
+                            using that plugin.
+
+                                     *:ShowPlugins* *fzf-addons-:ShowPlugins*
 `:ShowPlugins[!]  `           Open an fzf buffer with listed plugins.
                             Note: Requires vim-plug
 

@@ -1,5 +1,11 @@
 :Brofiles	fzf-addons.txt	/*:Brofiles*
-fzf-addons-brofiles:Brofiles	fzf-addons.txt	/*fzf-addons-brofiles:Brofiles*
+:GFiles	fzf-addons.txt	/*:GFiles*
+:GitFiles	fzf-addons.txt	/*:GitFiles*
+:ShowPlugins	fzf-addons.txt	/*:ShowPlugins*
+fzf-addons-:Brofiles	fzf-addons.txt	/*fzf-addons-:Brofiles*
+fzf-addons-:GFiles	fzf-addons.txt	/*fzf-addons-:GFiles*
+fzf-addons-:GitFiles	fzf-addons.txt	/*fzf-addons-:GitFiles*
+fzf-addons-:ShowPlugins	fzf-addons.txt	/*fzf-addons-:ShowPlugins*
 fzf-addons-commands	fzf-addons.txt	/*fzf-addons-commands*
 fzf-addons-helping	fzf-addons.txt	/*fzf-addons-helping*
 fzf-addons-introduction	fzf-addons.txt	/*fzf-addons-introduction*
