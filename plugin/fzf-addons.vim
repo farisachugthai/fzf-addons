@@ -76,7 +76,7 @@ let g:did_fzf_addons = 1
   endfunction
 
   " TODO: Sink doesnt work
-  command! -nargs=* -bang -bar -complete=customlist,s:Plugins FZPlugins
+  command! -nargs=* -bang -bar -complete=customlist,s:Plugins ShowPlugins
         \ call fzf#run(fzf#wrap(
         \ 'help',
         \ {'source': sort(keys(g:plugs)),
@@ -156,9 +156,14 @@ let g:did_fzf_addons = 1
       \ {'source': 'fd -H -t f',
       \ 'sink': 'pedit',
       \ 'options': [
-      \     '--layout=reverse', '--info=inline', '--preview', expand('~/.vim/plugged/fzf.vim/bin/preview.sh') . '{}'
+      \     '--layout=reverse', '--info=inline', '--preview', expand('~/.local/share/nvim/plugged/fzf.vim/bin/preview.sh') . '{}'
       \ ]},
       \ <bang>0)
+
+
+" Search Neighboring Files:
+  command! -bang FZFNeigh call fzf_addons#fzf_neighbouring_files(<bang>0)
+
 
 " Override His Commands To Add Completion:
   function! s:p(bang, ...)

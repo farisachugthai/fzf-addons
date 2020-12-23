@@ -93,3 +93,17 @@ function! fzf_addons#fzf_scriptnames(bang) abort
         \ a:bang))
 endfunction
 
+
+function! fzf_addons#fzf_neighbouring_files(bang) abort
+  let s:current_file =expand("%")
+  let s:cwd = fnamemodify(s:current_file, ':p:h')
+  let s:command = 'ag -g "" -f ' . s:cwd . ' --depth 0'
+
+  call fzf#run(fzf#wrap({
+        \ 'source': s:command,
+        \ 'sink':   'e',
+        \ 'options': '-m -x +s',
+        \ 'window':  'enew' },
+        \ a:bang))
+endfunction
+

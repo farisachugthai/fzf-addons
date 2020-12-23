@@ -18,6 +18,12 @@ command completion.
 
 Similar to Brofiles but with a split.
 
+- `:ShowPlugins`
+
+Show your loaded plugins in an FZF buffer.
+
+*Note*: Requires vim-plug
+
 ## Mappings
 
 **Note**: In order to use the mappings provided in this repository, Neovim must

@@ -26,6 +26,10 @@ Here are the commands made available through this repository.
                                        *:Brofiles* *fzf-addons-brofiles:Brofiles*
 `:Brofiles {args}`            Open an fzf buffer with previously opened buffers.
 
+                                 *:ShowPlugins* *fzf-addons-brofiles:Brofiles*
+`:ShowPlugins[!]  `           Open an fzf buffer with listed plugins.
+                            Note: Requires vim-plug
+
 
 3. Options                                               *fzf-addons-options*
 ==============================================================================
